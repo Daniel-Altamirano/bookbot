@@ -21,3 +21,14 @@ def get_char_counts(string):
     
     return char_counts
 
+def create_sorted_list_of_dicts_with_char_and_num(char_counts):
+    def sort_on(items):
+        return items["num"]
+    
+    chars = []
+    for char in char_counts:
+        chars.append({"char": char, "num": char_counts[char]})
+        
+    chars.sort(reverse=True, key=sort_on)
+    return chars
+
